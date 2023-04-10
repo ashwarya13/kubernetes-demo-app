@@ -11,7 +11,7 @@ spec:
   - protocol: "TCP"
     port: 80
     targetPort: 8080
-  type: LoadBalancer   # use NodePort, if you are not running Kubernetes on cloud
+  type: NodePort   # use NodePort, if you are not running Kubernetes on cloud
 ---
 # Configure 'Deployment' of backend application
 apiVersion: apps/v1
