@@ -13,7 +13,7 @@ spec:
   selector:       # mysql Pod Should contain same labels
     app: mysql
     tier: database
-  type: ClusterIP  # We Use DNS, Thus ClusterIP is not relevant
+  type: LoadBalancer  # We Use DNS, Thus ClusterIP is not relevant
 ---
 # Define a 'Persistent Voulume Claim'(PVC) for Mysql Storage, dynamically provisioned by cluster
 apiVersion: v1
