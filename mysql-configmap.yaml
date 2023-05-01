@@ -4,5 +4,5 @@ kind: ConfigMap
 metadata:
   name: db-conf  # name of ConfigMap, referenced in other files
 data:
-  host: 10.100.235.23   # host address of mysql server, we are using DNS of Service
+  host: mysql #10.108.131.64  host address of mysql server, we are using DNS of Service
   name: to-do-app-db # name of the database for application

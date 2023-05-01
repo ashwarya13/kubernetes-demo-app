@@ -8,12 +8,12 @@ metadata:
     tier: database
 spec:
   ports:
-    - port: 3306
-      targetPort: 3306
+          - port: 3306
+            targetPort: 3306
   selector:       # mysql Pod Should contain same labels
     app: mysql
     tier: database
-  type: LoadBalancer  # We Use DNS, Thus ClusterIP is not relevant
+  type: NodePort # We Use DNS, Thus ClusterIP is not relevant
 ---
 # Define a 'Persistent Voulume Claim'(PVC) for Mysql Storage, dynamically provisioned by cluster
 apiVersion: v1
