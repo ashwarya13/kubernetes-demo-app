@@ -1,84 +1,27 @@
-    1  kubectl get pods -n kube-system | grep kube-proxy
-    2  kubectl get svc -n kube-system kube-proxy
-    3  kubectl get svc -n kube-system 
-    4  kubectl get deployments -n kube-system 
-    5  k describe pod kube-proxy-7mqt5 -n kube-system
-    6  kubectl describe pod kube-proxy-7mqt5 -n kube-system
-    7  kubectl apply -f https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/addons/kube-proxy/kube-proxy.yml
-    8  kubectl describe daemonset kube-proxy -n kube-system
-    9  kubectl describe daemonset kube-proxy
-   10  kubectl describe daemonset kube-proxy -n kube-system
-   11  kubectl describe daemonset kube-proxy -n kube-system | grep -i service
-   12  kubectl get daemonset kube-proxy -n kube-system
-   13  kubectl get networkpolicy -n kube-system
-   14  kubectl get networkpolicy --all-namespaces
-   15  k get pods -n kube-system
-   16  alias k=kubectl
-   17  k get pods -n kube-system
-   18  kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/tigera-operator.yaml
-   19  kubectl get pods -n tigera-operator
-   20  kubectl apply -f https://docs.projectcalico.org/manifests/custom-resources.yaml
-   21  curl https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/custom-resources.yaml -O
-   22  kubectl create -f custom-resources.yaml
-   23  k get po -n kube-system
+    1  cd kubernetes-demo-app/
+    2  ls
+    3  wget https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+    4  vi components.yaml 
+    5  k
+    6  alias k=kubectl 
+    7  k apply -f components.yaml 
+    8  ]k get apiservices | grep -i metrics
+    9  k  get apiservices | grep -i metrics
+   10  k top pods
+   11  ls
+   12  vi frontend-deployment.yaml 
+   13  k apply -f frontend-deployment.yaml 
+   14  kubectl autoscale deployment to-do-app-frontend --cpu-percent=50 --min=2 --max=10
+   15  k get hpa
+   16  k top pds
+   17  k top pods
+   18  touch test.sh && chmmod +x test.sh &&vi test.sh 
+   19  touch test.sh && chmod +x test.sh &&vi test.sh 
+   20  nohup ./test.sh &
+   21  k top pods
+   22  k get po 
+   23  k get hpa
    24  k get po 
-   25  systemctl restart kubelet
-   26  sudo systemctl restart kubelet
-   27  sudo systemctl status kubelet
-   28  :q
-   29  k get po 
-   30  k delete -f kuberenetes-demo-manifests/
-   31  k apply -f kuberenetes-demo-manifests/
-   32  k get po 
-   33  k describe po  mysql-86d6d9f779-gsjpc
-   34  k get po 
-   35  k logs mysql-86d6d9f779-gsjpc
-   36  k logs to-do-app-backend-7dd548796d-rwjnw
-   37  k get svc
-   38  kubectl patch svc to-do-app-frontend -p '{"spec": {"type": "LoadBalancer", "externalIPs":["3.82.221.108"]}}'
-   39  k get svc
-   40  k logs to-do-app-frontend
-   41  k logs to-do-app-backend-7dd548796d-rwjnw
-   42  k get svc
-   43  k get po 
-   44  k log to-do-app-backend-7dd548796d-nvpnl
-   45  k exec -it to-do-app-frontend-dd69d4f69-8nrct -- /bin/sh
-   46  k get endpoints
-   47  k exec -it to-do-app-frontend-dd69d4f69-8nrct -- /bin/sh
-   48  k delete kuberenetes-demo-manifests
-   49  k delete -f  kuberenetes-demo-manifests
-   50  exit
-   51  k apply -f kuberenetes-demo-manifests/
-   52  kubectl apply -f kuberenetes-demo-manifests/
-   53  k get po 
-   54  alias k=kubectl
-   55  k get po 
-   56  k exec -it to-do-app-backend-7dd548796d-sjtcv -- /bin/sh
-   57  k get endpoints
-   58  k get po 
-   59  k exec -it to-do-app-backend-7dd548796d-sjtcv -- /bin/sh
-   60  k get po 
-   61  k log to-do-app-backend-7dd548796d-cqfp8
-   62  k logs to-do-app-backend-7dd548796d-cqfp8
-   63  k logs -f to-do-app-backend-7dd548796d-cqfp8
-   64  vi kuberenetes-demo-manifests/backend-configmap.yaml 
-   65  vi kuberenetes-demo-manifests/mysql-configmap.yaml 
-   66  k get svc
-   67  vi kuberenetes-demo-manifests/mysql-configmap.yaml 
-   68  k apply -f kuberenetes-demo-manifests/
-   69  k get po
-   70  k get svc
-   71  k logs -f to-do-app-backend-7dd548796d-cqfp8
-   72  k get svc
-   73  vi kuberenetes-demo-manifests/mysql-deployment.yaml 
-   74  k apply -f kuberenetes-demo-manifests/
-   75  k get svc
-   76  k get po
-   77  kubectl patch svc to-do-app-frontend -p '{"spec": {"type": "LoadBalancer", "externalIPs":["3.82.221.108"]}}'
-   78  k get po
-   79  k get svc
-   80  k get po
-   81  k logs to-do-app-backend-7dd548796d-cqfp8
-   82  k get po
-   83  k get svc
-   84  history > kuberenetes-demo-manifests/history.txt
+   25  k get hpa
+   26  k get po 
+   27  history > history.txt

@@ -4,4 +4,4 @@ kind: ConfigMap
 metadata:
   name: backend-conf # name of configMap
 data:
-        server-uri: 54.84.78.158:30001 # enternal ip of backend application 'Service'
+        server-uri: 184.72.206.143:30001 # enternal ip of backend application 'Service'
