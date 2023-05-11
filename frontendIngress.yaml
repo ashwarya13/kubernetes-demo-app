@@ -6,13 +6,21 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
-  rules:
-  - http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: to-do-app-frontend
-            port:
+  defaultBackend:
+    service:
+      name: to-do-app-frontend
+      port:
               number: 80
+  rules:
+          - host: ec2-174-129-119-133.compute-1.amazonaws.com
+            http:
+                    paths:
+                            - path: /
+                              pathType: Prefix
+                              backend:
+                                      service:
+                                              name: to-do-app-frontend
+                                              port:
+                                                      number: 80
+
+
